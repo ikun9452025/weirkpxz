@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>伪人快跑·下载</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e9eef3 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', 'Poppins', 'Inter', system-ui, -apple-system, 'SF Pro Text', 'Microsoft YaHei', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            position: relative;
+        }
+
+        .center-container {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 1200px;
+            padding: 0 24px;
+        }
+
+        .page {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .game-title {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 4.5rem;
+            font-weight: 800;
+            background: linear-gradient(125deg, #e67e22, #d35400, #e67e22);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            letter-spacing: 2px;
+        }
+
+        .resources-list {
+            margin-top: 60px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .resource-item {
+            background: #ffffff;
+            border-radius: 1.2rem;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            transition: transform 0.2s ease, box-shadow 0.2s;
+            border: 1px solid #e0e4e8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .resource-item:hover {
+            transform: translateX(4px);
+            border-color: #e67e22;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+        }
+
+        .resource-img {
+            width: 80px;
+            height: 80px;
+            flex-shrink: 0;
+            background: #f0f2f5;
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #e0e4e8;
+        }
+
+        .resource-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .resource-name {
+            flex: 1;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c3e2f;
+            word-break: break-word;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: #0090ff;
+            padding: 10px 28px;
+            border-radius: 60px;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: 0.2s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            letter-spacing: 1px;
+            flex-shrink: 0;
+        }
+
+        .download-btn:hover {
+            background: #33a8ff;
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .turbo-section {
+            margin-top: 60px;
+            margin-bottom: 60px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .turbo-card {
+            background: #ffffff;
+            border-radius: 1.5rem;
+            padding: 28px 40px;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            border: 1px solid #e0b07a;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .turbo-name {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #d35400;
+            margin-bottom: 12px;
+        }
+
+        .turbo-desc {
+            font-size: 1rem;
+            color: #4a5b4e;
+            margin-bottom: 24px;
+        }
+
+        .turbo-link {
+            background: #0090ff;
+            padding: 12px 32px;
+            border-radius: 40px;
+            display: inline-block;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: 0.2s;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+
+        .turbo-link:hover {
+            background: #33a8ff;
+            transform: scale(1.02);
+        }
+
+        @media (max-width: 700px) {
+            .game-title {
+                font-size: 2.5rem;
+                margin-top: 30px;
+            }
+            .resource-item {
+                flex-wrap: wrap;
+                gap: 12px;
+                padding: 16px;
+            }
+            .resource-img {
+                width: 60px;
+                height: 60px;
+            }
+            .resource-name {
+                flex: 1;
+                font-size: 1rem;
+            }
+            .download-btn {
+                padding: 8px 20px;
+                font-size: 0.85rem;
+            }
+            .turbo-name {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="center-container">
+    <div class="page">
+
+        <h1 class="game-title">伪人快跑</h1>
+
+        <div class="resources-list">
+            <div class="resource-item">
+                <div class="resource-img">
+                    <img src="伪人快跑.png" alt="伪人快跑" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 fill=%27%23e67e22%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 font-size=%2750%27%3E🏃%3C/text%3E%3C/svg%3E'">
+                </div>
+                <div class="resource-name">伪人快跑(Windows32位程序).zip</div>
+                <a href="伪人快跑(Windows32位程序).zip" class="download-btn" download>下载</a>
+            </div>
+
+            <div class="resource-item">
+                <div class="resource-img">
+                    <img src="伪人快跑.png" alt="伪人快跑" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 fill=%27%23e67e22%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 font-size=%2750%27%3E🏃%3C/text%3E%3C/svg%3E'">
+                </div>
+                <div class="resource-name">伪人快跑(MacOS程序).zip</div>
+                <a href="伪人快跑(MacOS程序).zip" class="download-btn" download>下载</a>
+            </div>
+
+            <div class="resource-item">
+                <div class="resource-img">
+                    <img src="伪人快跑.png" alt="伪人快跑" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 fill=%27%23e67e22%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 font-size=%2750%27%3E🏃%3C/text%3E%3C/svg%3E'">
+                </div>
+                <div class="resource-name">伪人快跑.sb3</div>
+                <a href="伪人快跑.sb3" class="download-btn" download>下载</a>
+            </div>
+
+            <div class="resource-item">
+                <div class="resource-img">
+                    <img src="伪人快跑.png" alt="伪人快跑" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 fill=%27%23e67e22%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 font-size=%2750%27%3E🏃%3C/text%3E%3C/svg%3E'">
+                </div>
+                <div class="resource-name">伪人快跑.html</div>
+                <a href="伪人快跑.html" class="download-btn" download>下载</a>
+            </div>
+        </div>
+
+        <div class="turbo-section">
+            <div class="turbo-card">
+                <div class="turbo-name">TurboWarp</div>
+                <div class="turbo-desc">打开TurboWarp官网下载TurboWarp</div>
+                <a href="https://turbowarp.org/" class="turbo-link" target="_blank" rel="noopener noreferrer">访问官网</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
