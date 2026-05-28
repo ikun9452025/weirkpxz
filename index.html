@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+    <!-- 设置文档字符编码为UTF-8，防止某浏览器的私密编码 -->
     <meta charset="UTF-8">
+    <!-- 适配手机 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>伪人快跑·下载</title>
     <style>
+        /* 全局样式重置 */
         * {
             margin: 0;
             padding: 0;
@@ -22,6 +25,7 @@
             position: relative;
         }
 
+       
         .center-container {
             position: absolute;
             top: 0;
@@ -77,7 +81,7 @@
             border-color: #e67e22;
             box-shadow: 0 4px 14px rgba(0,0,0,0.1);
         }
-
+        
         .resource-img {
             width: 80px;
             height: 80px;
@@ -178,6 +182,7 @@
             transform: scale(1.02);
         }
 
+        /* 手机适配，屏幕宽度小于700px时改成700px */
         @media (max-width: 700px) {
             .game-title {
                 font-size: 2.5rem;
@@ -210,25 +215,36 @@
 <div class="center-container">
     <div class="page">
 
+        <!-- 游戏标题 -->
         <h1 class="game-title">伪人快跑</h1>
 
+        <!-- 资源列表 -->
+        
+        
         <div class="resources-list">
+            <!-- Windows版本被我吃了 -->
+            
+            <!-- 骗你的Lindx，安卓版本也被我吃了 -->
+            
+            
+            <!-- Mac版资源项 -->
             <div class="resource-item">
                 <div class="resource-img">
                     <img src="伪人快跑.png" alt="伪人快跑" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 fill=%27%23e67e22%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 font-size=%2750%27%3E🏃%3C/text%3E%3C/svg%3E'">
                 </div>
-                <div class="resource-name">伪人快跑(Windows32位程序).zip</div>
-                <a href="伪人快跑(Windows32位程序).zip" class="download-btn" download>下载</a>
-            </div>
-
-            <div class="resource-item">
-                <div class="resource-img">
-                    <img src="伪人快跑.png" alt="伪人快跑" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 fill=%27%23e67e22%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 font-size=%2750%27%3E🏃%3C/text%3E%3C/svg%3E'">
+                <div class="resource-name">
+                    伪人快跑(MacOS程序).zip
+                    <div style="font-size: 0.75rem; color: #999; font-weight: normal; margin-top: 4px;">
+                        Mac提示无法验证？去系统设置→隐私与安全性→仍要打开→弹窗选仍要打开→密码或者触控ID
+                    </div>
                 </div>
-                <div class="resource-name">伪人快跑(MacOS程序).zip</div>
                 <a href="伪人快跑(MacOS程序).zip" class="download-btn" download>下载</a>
+                
             </div>
 
+            
+            
+            <!-- scratch文件资源项 -->
             <div class="resource-item">
                 <div class="resource-img">
                     <img src="伪人快跑.png" alt="伪人快跑" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 fill=%27%23e67e22%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 font-size=%2750%27%3E🏃%3C/text%3E%3C/svg%3E'">
@@ -237,23 +253,37 @@
                 <a href="伪人快跑.sb3" class="download-btn" download>下载</a>
             </div>
 
+            
+            
+            <!-- HTML文件资源项 -->
             <div class="resource-item">
                 <div class="resource-img">
                     <img src="伪人快跑.png" alt="伪人快跑" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 fill=%27%23e67e22%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 font-size=%2750%27%3E🏃%3C/text%3E%3C/svg%3E'">
                 </div>
                 <div class="resource-name">伪人快跑.html</div>
+                <!-- 本地文件下载按钮 -->
                 <a href="伪人快跑.html" class="download-btn" download>下载</a>
+                <!-- 跳转到网页版的链接 -->
+                <a href="https://ikun9452025.github.io/weirkp/" class="turbo-link" target="_blank" rel="noopener noreferrer">▶ 直接游玩 网页版</a>
+                <div style="font-size: 0.65rem; color: #e67e22; margin-top: 4px;">⚠️ 手机访问无法保存存档</div>
             </div>
         </div>
 
+        
+        
+        <!-- TurboWarp下载 -->
         <div class="turbo-section">
             <div class="turbo-card">
                 <div class="turbo-name">TurboWarp</div>
                 <div class="turbo-desc">打开TurboWarp官网下载TurboWarp</div>
-                <a href="https://turbowarp.org/" class="turbo-link" target="_blank" rel="noopener noreferrer">访问官网</a>
+                <a href="https://desktop.turbowarp.org/" class="turbo-link" target="_blank" rel="noopener noreferrer">访问官网</a>
             </div>
         </div>
-
+        
+        <div style="text-align: center; margin-top: 40px; color: #888; font-size: 0.8rem;">
+            最后更新：2026年5月28 19:32 星期四
+        </div>
+        
     </div>
 </div>
 </body>
