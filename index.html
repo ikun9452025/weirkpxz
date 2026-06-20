@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <!-- 设置文档字符编码为UTF-8，防止沙发瑞浏览器的编码 -->
     <meta charset="UTF-8">
-    <!-- 适配手机 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>伪人快跑·下载</title>
     <style>
-        /* 全局样式重置 */
         * {
             margin: 0;
             padding: 0;
@@ -25,7 +22,6 @@
             position: relative;
         }
 
-       
         .center-container {
             position: absolute;
             top: 0;
@@ -182,7 +178,50 @@
             transform: scale(1.02);
         }
 
-        /* 手机适配，屏幕宽度小于700px时改成700px */
+        /* ========== Star 倒三角丝带 ========== */
+        .star-ribbon {
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 999;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 140px 140px 0;
+            border-color: transparent #e67e22 transparent transparent;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .star-ribbon:hover {
+            border-color: transparent #f5a623 transparent transparent;
+            transform: scale(1.02);
+        }
+
+        .star-ribbon-text {
+            position: fixed;
+            top: 18px;
+            right: 8px;
+            z-index: 1000;
+            color: white;
+            font-weight: 700;
+            font-size: 13px;
+            transform: rotate(45deg);
+            cursor: pointer;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+            transition: 0.3s;
+            line-height: 1.4;
+            text-align: center;
+        }
+
+        .star-ribbon-text:hover {
+            transform: rotate(45deg) scale(1.05);
+            color: #fff5e6;
+        }
+
+        /* ========== 手机适配 ========== */
         @media (max-width: 700px) {
             .game-title {
                 font-size: 2.5rem;
@@ -208,83 +247,83 @@
             .turbo-name {
                 font-size: 1.5rem;
             }
+
+            .star-ribbon {
+                border-width: 0 100px 100px 0;
+            }
+            .star-ribbon-text {
+                top: 14px;
+                right: 5px;
+                font-size: 11px;
+            }
         }
     </style>
 </head>
 <body>
+
+<!-- ====== Star 倒三角丝带 ====== -->
+<a href="https://github.com/ikun9452025/weirkp" target="_blank" rel="noopener noreferrer">
+    <div class="star-ribbon"></div>
+    <div class="star-ribbon-text">
+                给一个⭐吧<br>
+    </div>
+</a>
+
 <div class="center-container">
     <div class="page">
 
-        <!-- 游戏标题 -->
         <h1 class="game-title">伪人快跑</h1>
 
-        <!-- 资源列表 -->
-        
-        
         <div class="resources-list">
-            <!-- Windows版本被我吃了 -->
-            
-            <!-- 骗你的Lindx，手电筒版本也被我吃了 -->
-            
-            
-            <!-- Mac版资源项 -->
+            <!-- Mac版 -->
             <div class="resource-item">
                 <div class="resource-img">
                     <img src="伪人快跑.png" alt="伪人快跑" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 fill=%27%23e67e22%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 font-size=%2750%27%3E🏃%3C/text%3E%3C/svg%3E'">
                 </div>
                 <div class="resource-name">
-                    伪人快跑(MacOS程序).zip v1.9.9b
+                    伪人快跑(MacOS程序).zip v2.0.4
                     <div style="font-size: 0.75rem; color: #999; font-weight: normal; margin-top: 4px;">
                         Mac提示无法验证？去系统设置→隐私与安全性→仍要打开→弹窗选仍要打开→密码或者触控ID
                     </div>
                     <div style="font-size: 0.75rem; color: #999; font-weight: normal; margin-top: 4px;">
-                       10.5MB
+                        11.2 MB
                     </div>
                 </div>
                 <a href="伪人快跑(MacOS程序).zip" class="download-btn" download>下载</a>
-                
             </div>
 
-            
-            
-            <!-- scratch文件资源项 -->
+            <!-- sb3文件 -->
             <div class="resource-item">
                 <div class="resource-img">
                     <img src="伪人快跑.png" alt="伪人快跑" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 fill=%27%23e67e22%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 font-size=%2750%27%3E🏃%3C/text%3E%3C/svg%3E'">
                 </div>
                 <div class="resource-name">
-                    伪人快跑.sb3 v1.9.9b
+                    伪人快跑.sb3 v2.0.4
                     <div style="font-size: 0.75rem; color: #999; font-weight: normal; margin-top: 4px;">
-                       5.7MB
+                       6.1MB
                     </div>
                 </div>
                 <a href="伪人快跑.sb3" class="download-btn" download>下载</a>
             </div>
 
-            
-            
-            <!-- HTML文件资源项 -->
+            <!-- HTML文件 -->
             <div class="resource-item">
                 <div class="resource-img">
                     <img src="伪人快跑.png" alt="伪人快跑" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 fill=%27%23e67e22%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 font-size=%2750%27%3E🏃%3C/text%3E%3C/svg%3E'">
                 </div>
                 <div class="resource-name">
-                    伪人快跑.html v1.9.9b
+                    伪人快跑.html v2.0.4
                     <div style="font-size: 0.75rem; color: #999; font-weight: normal; margin-top: 4px;">
-                        10MB
+                        10.9 MB
                     </div>
                 </div>
-                <!-- 本地文件下载按钮 -->
                 <a href="伪人快跑.html" class="download-btn" download>下载</a>
-                <!-- 跳转到网页版的链接 -->
-                <a href="https://ikun9452025.github.io/weirkp/" class="turbo-link" target="_blank" rel="noopener noreferrer">▶ 直接游玩 网页版v1.9.9b</a>
+                <a href="https://ikun9452025.github.io/weirkp/" class="turbo-link" target="_blank" rel="noopener noreferrer">▶ 直接游玩 网页版v2.0.4</a>
                 <div style="font-size: 0.65rem; color: #e67e22; margin-top: 4px;">⚠️ 手机访问无法保存存档</div>
             </div>
         </div>
 
-        
-        
-        <!-- TurboWarp下载 -->
+        <!-- TurboWarp -->
         <div class="turbo-section">
             <div class="turbo-card">
                 <div class="turbo-name">TurboWarp</div>
@@ -293,11 +332,26 @@
             </div>
         </div>
         
+        <!-- server.js -->
+        <div class="resource-item">
+            <div class="resource-img">
+                <img src="伪人快跑.png" alt="伪人快跑" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 fill=%27%23e67e22%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 font-size=%2750%27%3E🏃%3C/text%3E%3C/svg%3E'">
+            </div>
+            <div class="resource-name">
+                服务器文件(局域网)
+                <div style="font-size: 0.75rem; color: #999; font-weight: normal; margin-top: 4px;">
+                   5KB
+                </div>
+            </div>
+            <a href="server.js" class="download-btn" download>下载</a>
+        </div>
+
         <div style="text-align: center; margin-top: 40px; color: #888; font-size: 0.8rem;">
-            最后更新：2026年6月13 9:41 星期六
+            最后更新：2026年6月20 9:24 星期六
         </div>
         
     </div>
 </div>
+
 </body>
 </html>
