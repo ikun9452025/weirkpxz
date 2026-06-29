@@ -1,10 +1,37 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> <!--适配沙发瑞浏览器文字抽风-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>伪人快跑·下载</title>
     <style>
+        .tutorial-text {
+            white-space: pre-wrap;    /* 一个自动的自动换行的东西 */
+            word-break: break-word;   /* 长单词换行 (xing)*/
+            line-height: 1.8;
+            font-size: 1.7rem;
+            color: #400000;
+            background: #fff8f0;
+            padding: 20px 24px;
+            border-radius: 1.2rem;
+            border: 1px solid #e0b07a;
+            width: 100%;
+        }
+        
+        .text-display {
+            white-space: pre-wrap;
+            word-break: break-word;
+            line-height: 2;
+            font-size: 2rem;
+            color: #1b7400;
+            background: #8cff69bd;
+            padding: 20px 24px;
+            border-radius: 1.2rem;
+            border: 3px solid #3cff00;
+            width: 100%;
+        }
+        
+        
         * {
             margin: 0;
             padding: 0;
@@ -128,38 +155,6 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
 
-        .turbo-section {
-            margin-top: 60px;
-            margin-bottom: 60px;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
-
-        .turbo-card {
-            background: #ffffff;
-            border-radius: 1.5rem;
-            padding: 28px 40px;
-            width: 100%;
-            max-width: 500px;
-            text-align: center;
-            border: 1px solid #e0b07a;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-        }
-
-        .turbo-name {
-            font-size: 2rem;
-            font-weight: 800;
-            color: #d35400;
-            margin-bottom: 12px;
-        }
-
-        .turbo-desc {
-            font-size: 1rem;
-            color: #4a5b4e;
-            margin-bottom: 24px;
-        }
-
         .turbo-link {
             background: #0090ff;
             padding: 12px 32px;
@@ -176,6 +171,18 @@
         .turbo-link:hover {
             background: #33a8ff;
             transform: scale(1.02);
+        }
+
+        /* ========== 双列并排 ========== */
+        .double-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .double-row .resource-item {
+            margin: 0;
         }
 
         /* ========== Star 倒三角丝带 ========== */
@@ -244,9 +251,6 @@
                 padding: 8px 20px;
                 font-size: 0.85rem;
             }
-            .turbo-name {
-                font-size: 1.5rem;
-            }
 
             .star-ribbon {
                 border-width: 0 100px 100px 0;
@@ -255,6 +259,12 @@
                 top: 14px;
                 right: 5px;
                 font-size: 11px;
+            }
+
+            /* 手机上一列显示 */
+            .double-row {
+                grid-template-columns: 1fr;
+                gap: 16px;
             }
         }
     </style>
@@ -281,7 +291,7 @@
                     <img src="伪人快跑.png" alt="伪人快跑" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 fill=%27%23e67e22%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 font-size=%2750%27%3E🏃%3C/text%3E%3C/svg%3E'">
                 </div>
                 <div class="resource-name">
-                    伪人快跑(MacOS程序).zip v2.0.4
+                    伪人快跑(MacOS程序).zip v2.0.8
                     <div style="font-size: 0.75rem; color: #999; font-weight: normal; margin-top: 4px;">
                         Mac提示无法验证？去系统设置→隐私与安全性→仍要打开→弹窗选仍要打开→密码或者触控ID
                     </div>
@@ -298,7 +308,7 @@
                     <img src="伪人快跑.png" alt="伪人快跑" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 fill=%27%23e67e22%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 font-size=%2750%27%3E🏃%3C/text%3E%3C/svg%3E'">
                 </div>
                 <div class="resource-name">
-                    伪人快跑.sb3 v2.0.4
+                    伪人快跑.sb3 v2.0.8
                     <div style="font-size: 0.75rem; color: #999; font-weight: normal; margin-top: 4px;">
                        6.1MB
                     </div>
@@ -312,46 +322,124 @@
                     <img src="伪人快跑.png" alt="伪人快跑" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 fill=%27%23e67e22%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 font-size=%2750%27%3E🏃%3C/text%3E%3C/svg%3E'">
                 </div>
                 <div class="resource-name">
-                    伪人快跑.html v2.0.4
+                    伪人快跑.html v2.0.8
                     <div style="font-size: 0.75rem; color: #999; font-weight: normal; margin-top: 4px;">
-                        10.9 MB
+                        11.1 MB
                     </div>
                 </div>
                 <a href="伪人快跑.html" class="download-btn" download>下载</a>
-                <a href="https://ikun9452025.github.io/weirkp/" class="turbo-link" target="_blank" rel="noopener noreferrer">▶ 直接游玩 网页版v2.0.4</a>
-                <div style="font-size: 0.65rem; color: #e67e22; margin-top: 4px;">⚠️ 手机访问无法保存存档</div>
+                <a href="https://ikun9452025.github.io/weirkp/" class="turbo-link" target="_blank" rel="noopener noreferrer">▶ 直接游玩 网页版v2.0.8</a>
+                <div style="font-size: 0.65rem; color: #e67e22; margin-top: 4px;">手机端建议使用"X浏览器"或者"沙发瑞浏览器"</div>
             </div>
-        </div>
 
-        <!-- TurboWarp -->
-        <div class="turbo-section">
-            <div class="turbo-card">
-                <div class="turbo-name">TurboWarp</div>
-                <div class="turbo-desc">打开TurboWarp官网下载TurboWarp</div>
-                <a href="https://desktop.turbowarp.org/" class="turbo-link" target="_blank" rel="noopener noreferrer">访问官网</a>
-            </div>
-        </div>
-        
-        <!-- server.js -->
-        <div class="resource-item">
-            <div class="resource-img">
-                <img src="伪人快跑.png" alt="伪人快跑" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 fill=%27%23e67e22%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 font-size=%2750%27%3E🏃%3C/text%3E%3C/svg%3E'">
-            </div>
-            <div class="resource-name">
-                服务器文件(局域网)
-                <div style="font-size: 0.75rem; color: #999; font-weight: normal; margin-top: 4px;">
-                   5KB
+            <!-- ====== TurboWarp + server.js 并排 说实话，之前那个难看死了====== -->
+            <div class="double-row">
+                <!-- TurboWarp -->
+                <div class="resource-item">
+                    <div class="resource-img">
+                        <img src="伪人快跑.png" alt="TurboWarp" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 fill=%27%23e67e22%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 font-size=%2750%27%3E🚀%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <div class="resource-name">
+                        TurboWarp
+                        <div style="font-size: 0.75rem; color: #999; font-weight: normal; margin-top: 4px;">
+                            打开TurboWarp官网下载
+                        </div>
+                    </div>
+                    <a href="https://desktop.turbowarp.org/" class="turbo-link" target="_blank" rel="noopener noreferrer">访问官网</a>
+                </div>
+
+                <!-- server.js -->
+                <div class="resource-item">
+                    <div class="resource-img">
+                        <img src="伪人快跑.png" alt="服务器文件" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 fill=%27%23e67e22%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 font-size=%2750%27%3E📁%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <div class="resource-name">
+                        服务器文件(局域网)
+                        <div style="font-size: 0.75rem; color: #999; font-weight: normal; margin-top: 4px;">
+                            12KB
+                        </div>
+                    </div>
+                    <a href="server.js" class="download-btn" download>下载</a>
                 </div>
             </div>
-            <a href="server.js" class="download-btn" download>下载</a>
+
+            
+            <div class="text-display">
+                                                                                          游玩方法
+            
+            ←:向左移动
+            →:向右移动
+            q:使用道具
+            
+            点击"伪人"切换不同皮肤"
+            点击模式切换不同模式
+            
+            导入的存档格式是.cundang
+            老版本的存档与新版本互不可使用
+            
+            触碰端有独立的按钮点击，电脑端则直接飞升。
+            触碰端无法打开开发者模式。
+            </div>
+            
+            <!-- ====== 服务器配置教程 ====== -->
+            
+            
+            <div class="tutorial-text">
+服务器配置:
+1. 访问 nodejs.org -->点击获取Node.js®
+2. 下载:
+    选择系统(如Windows,x64 ; MacOS ,x64)
+    Windows:
+        点击Windows 安装程序(.msi)
+        下载到本地运行
+        _____________________
+        
+        终端脚本
+        # 下载并安装 Chocolatey：
+        powershell -c "irm https://community.chocolatey.org/install.ps1|iex"
+
+        # 下载并安装 Node.js：
+        choco install nodejs --version="24.18.0"
+
+        #下载ws
+        npm install ws
+        
+    MacOS:
+        
+        # 下载并安装 Homebrew
+        curl -o- https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
+
+        # 下载并安装 Node.js：
+        brew install node@24
+
+        #下载ws
+        npm install ws
+
+3.运行脚本
+    下载 "服务器文件(局域网)"
+    cd 拖入文件删除后方server.js 按回车键(一个像箭头尾巴弯曲的↩︎或者Enter)运行
+    node server.js 运行文件
+            
         </div>
 
-        <div style="text-align: center; margin-top: 40px; color: #888; font-size: 0.8rem;">
-            最后更新：2026年6月20 9:24 星期六
+        
+        
+        <div style="text-align: center; margin-top: 40px; color: #888; font-size: 1rem;">
+            最后更新：2026年6月29 02:12 星期一
         </div>
         
+        <div style="text-align: center; margin-top: 40px; color: #888; font-size: 1rem;">
+                    
+        </div><!--这部分是用来加一部分空白区域不然的话太难看了-->
+        
+        
+
     </div>
 </div>
 
 </body>
 </html>
+<!--
+雷霆动物集体蹦迪,神人老头公路平移。
+这里没有正常人，有或者说正常的都不是人。
+-->
