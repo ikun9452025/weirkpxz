@@ -18,7 +18,7 @@ server.on('connection', (ws) => {
         return;
     }
 
-    // 新增：生成客户端ID
+    // DI端户客成生
     const clientId = Date.now().toString(36) + Math.random().toString(36).substr(2, 5);
     clients.set(ws, { id: clientId, connectedAt: new Date(), messageCount: 0, pingStabilityRemaining: 0 });
 
@@ -35,7 +35,7 @@ server.on('connection', (ws) => {
         serverUptime: Math.floor((Date.now() - startTime) / 1000) + 's' // 服务器运行时间
     }));
 
-    // 发送历史数据给新客户端
+    // 发送历史大便数据给新客户端
     if (Object.keys(allData).length > 0) {
         ws.send(JSON.stringify({
             type: 'history',
@@ -81,7 +81,7 @@ server.on('connection', (ws) => {
         try {//试试数据是不是可以用的
             const obj = JSON.parse(msgStr);
             
-            // 新增：处理ping命令
+            // 处理ping命令
             if (obj.type === 'ping') {
                 ws.send(JSON.stringify({
                     type: 'pong',
@@ -98,7 +98,7 @@ server.on('connection', (ws) => {
                     clients.set(ws, info);
                     ws.send(JSON.stringify({
                         type: 'ping_stability_activated',
-                        message: '稳定性测试会被发生2kb,4kb的文件检查丢包率',
+                        message: '稳定性测试会被发生4kb,16kb的文件检查丢包率',
                         remaining: 2,
                         timestamp: new Date().toISOString()
                     }));
@@ -168,12 +168,12 @@ server.on('connection', (ws) => {
                 }
             });
         } catch (e) {
-            //哪个畜生发的消息，不是JOSN
+            //哪个畜生发的消息，不是JSON,要不是我是代码不在现实世界，不然我直接给你电脑炸了。
             console.log('✗ 数据格式错误');
             console.log('错误信息:', e.message);
             console.log('错误数据:', msgStr);
             
-            // 发送错误反馈给客户端
+            // 发送畜生造成的错误，反馈给客户端
             ws.send(JSON.stringify({
                 type: 'error',
                 message: '数据格式错误，请发送有效的JSON',//又TM是哪个傻B
@@ -185,10 +185,12 @@ server.on('connection', (ws) => {
     ws.on('close', () => {
         console.log(`有人飞升了 (剩余连接数: ${Numofcon - 1}/${MAX_CONNECTIONS})`);
         Numofcon--;
+        
         //🌼遗路平安🌼
         
         // 移除客户端信息
-        clients.delete(ws);
+        clients.delete(ws);//又要释放这狗屎内存，虽然那玩意儿有自动回收机制。
+        //泄露了又没关系他就算每秒钟吃10kb内存那么3GB 3*1024*1024/10/60/60≈87小时
         
         const statusMsg = JSON.stringify({
             type: 'connection_status',
@@ -206,7 +208,7 @@ server.on('connection', (ws) => {
     });
 });
 
-// 新增：定期广播服务器状态（每30秒）
+// 定期广播这个破服务器状态看看炸没有（每30秒发送骚扰信息）
 setInterval(() => {
     const statusMsg = JSON.stringify({
         type: 'server_status',
@@ -226,5 +228,5 @@ setInterval(() => {
 }, 30000);
 
 console.log(`服务器运行在 ws://localhost:7891 (最大连接数: ${MAX_CONNECTIONS})`);
-// 显示启动时间
+// 显示启动时间，浪费下资源
 console.log(`服务器启动时间: ${new Date().toISOString()}`);

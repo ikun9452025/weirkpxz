@@ -7,8 +7,8 @@
     <style>
         /*我不想写注释，快点/kill @e[type=!minecraft:player,distance=..10]*/
         .tutorial-text {
-            white-space: pre-wrap;    /* 一个自动的自动换行的东西 */
-            word-break: break-word;   /* 长单词换行 (其实这个字读xing)*/
+            white-space: pre-wrap;
+            word-break: break-word;
             line-height: 1.8;
             font-size: 1.7rem;
             color: #400000;
@@ -32,7 +32,19 @@
             width: 100%;
         }
         
-        
+        .text-jie-shao{
+            white-space: pre-wrap;
+            word-break: break-word;
+            line-height: 2;
+            font-size: 2rem;
+            color: #000000;
+            background: #ff8c8c;
+            padding: 20px 24px;
+            border-radius: 1.2rem;
+            border: 3px solid #ff0000;
+            width: 100%;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -46,22 +58,12 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
-            position: relative;
-        }
-
-        .center-container {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            max-width: 1200px;
-            padding: 0 24px;
+            padding: 0 24px 40px;
         }
 
         .page {
             width: 100%;
+            max-width: 1200px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -98,6 +100,7 @@
             transition: transform 0.2s ease, box-shadow 0.2s;
             border: 1px solid #e0e4e8;
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            flex-wrap: wrap;
         }
 
         .resource-item:hover {
@@ -131,6 +134,7 @@
             font-weight: 600;
             color: #2c3e2f;
             word-break: break-word;
+            min-width: 160px;
         }
 
         .download-btn {
@@ -167,6 +171,7 @@
             font-size: 1rem;
             transition: 0.2s;
             box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            flex-shrink: 0;
         }
 
         .turbo-link:hover {
@@ -174,7 +179,6 @@
             transform: scale(1.02);
         }
 
-        /* ========== 双列并排 ========== */
         .double-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -186,7 +190,6 @@
             margin: 0;
         }
 
-        /* ========== Star 倒三角丝带 ========== */
         .star-ribbon {
             position: fixed;
             top: 0;
@@ -229,14 +232,24 @@
             color: #fff5e6;
         }
 
-        /* ========== 手机适配 ========== */
+        .footer-meta {
+            text-align: center;
+            margin-top: 40px;
+            color: #888;
+            font-size: 1rem;
+        }
+
+        .footer-meta:last-of-type {
+            margin-top: 0;
+            height: 20px;
+        }
+
         @media (max-width: 700px) {
             .game-title {
                 font-size: 2.5rem;
                 margin-top: 30px;
             }
             .resource-item {
-                flex-wrap: wrap;
                 gap: 12px;
                 padding: 16px;
             }
@@ -245,14 +258,17 @@
                 height: 60px;
             }
             .resource-name {
-                flex: 1;
                 font-size: 1rem;
+                min-width: 120px;
             }
             .download-btn {
                 padding: 8px 20px;
                 font-size: 0.85rem;
             }
-
+            .turbo-link {
+                padding: 8px 20px;
+                font-size: 0.85rem;
+            }
             .star-ribbon {
                 border-width: 0 100px 100px 0;
             }
@@ -261,8 +277,6 @@
                 right: 5px;
                 font-size: 11px;
             }
-
-            /* 手机上一列显示 */
             .double-row {
                 grid-template-columns: 1fr;
                 gap: 16px;
@@ -272,123 +286,180 @@
 </head>
 <body>
 
-<!-- ====== Star 倒三角丝带 ====== -->
 <!--好久都没要Star了赶快要一个-->
 <a href="https://github.com/ikun9452025/weirkp" target="_blank" rel="noopener noreferrer">
     <div class="star-ribbon"></div>
-    <div class="star-ribbon-text">
-                给一个⭐吧<br>
-    </div>
+    <div class="star-ribbon-text">给一个⭐吧<br></div>
 </a>
 
-<div class="center-container">
-    <div class="page">
+<div class="page">
+    <h1 class="game-title">伪人快跑</h1>
+    <!--/kill @LinuxEdition-->
+    <!--/kill @AndroidEdition-->
 
-        <h1 class="game-title">伪人快跑</h1>
+    <div class="resources-list">
+        <!-- Mac版 -->
+        <div class="resource-item">
+            <div class="resource-img">
+                <img src="伪人快跑.png" alt="伪人快跑" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 fill=%27%23e67e22%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 font-size=%2750%27%3E🏃%3C/text%3E%3C/svg%3E'">
+            </div>
+            <div class="resource-name">
+                伪人快跑(MacOS程序).zip v2.2.6
+                <div style="font-size: 0.75rem; color: #999; font-weight: normal; margin-top: 4px;">
+                    Mac提示无法验证？去系统设置→隐私与安全性→仍要打开→弹窗选仍要打开→密码或者触控ID
+                </div>
+                <div style="font-size: 0.75rem; color: #999; font-weight: normal; margin-top: 4px;">
+                    27.9 MB
+                </div>
+            </div>
+            <a href="伪人快跑(MacOS程序).zip" class="download-btn" download>下载</a>
+        </div>
 
-        <div class="resources-list">
-            <!-- Mac版 -->
+        <!-- sb3文件 -->
+        <div class="resource-item">
+            <div class="resource-img">
+                <img src="伪人快跑.png" alt="伪人快跑" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 fill=%27%23e67e22%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 font-size=%2750%27%3E🏃%3C/text%3E%3C/svg%3E'">
+            </div>
+            <div class="resource-name">
+                伪人快跑.sb3 v2.2.6
+                <div style="font-size: 0.75rem; color: #999; font-weight: normal; margin-top: 4px;">
+                    22.8MB
+                </div>
+            </div>
+            <a href="伪人快跑.sb3" class="download-btn" download>下载</a>
+        </div>
+
+        <!-- HTML文件 -->
+        <div class="resource-item">
+            <div class="resource-img">
+                <img src="伪人快跑.png" alt="伪人快跑" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 fill=%27%23e67e22%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 font-size=%2750%27%3E🏃%3C/text%3E%3C/svg%3E'">
+            </div>
+            <div class="resource-name">
+                伪人快跑.html v2.2.6
+                <div style="font-size: 0.75rem; color: #999; font-weight: normal; margin-top: 4px;">
+                    32.1 MB
+                </div>
+            </div>
+            <a href="伪人快跑.html" class="download-btn" download>下载</a>
+            <a href="https://ikun9452025.github.io/weirkp/" class="turbo-link" target="_blank" rel="noopener noreferrer">▶ 直接游玩 网页版v2.2.6</a>
+            <div style="font-size: 0.65rem; color: #e67e22; margin-top: 4px; width: 100%;">手机端建议使用"X浏览器"或者"沙发瑞浏览器"</div>
+        </div>
+
+        <!-- TurboWarp + server.js 并排 -->
+        <!--说实话之前的丑死了-->
+        <div class="double-row">
             <div class="resource-item">
                 <div class="resource-img">
-                    <img src="伪人快跑.png" alt="伪人快跑" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 fill=%27%23e67e22%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 font-size=%2750%27%3E🏃%3C/text%3E%3C/svg%3E'">
+                    <img src="伪人快跑.png" alt="TurboWarp" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 fill=%27%23e67e22%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 font-size=%2750%27%3E🚀%3C/text%3E%3C/svg%3E'">
                 </div>
                 <div class="resource-name">
-                    伪人快跑(MacOS程序).zip v2.1.4
+                    TurboWarp
                     <div style="font-size: 0.75rem; color: #999; font-weight: normal; margin-top: 4px;">
-                        Mac提示无法验证？去系统设置→隐私与安全性→仍要打开→弹窗选仍要打开→密码或者触控ID
-                    </div>
-                    <div style="font-size: 0.75rem; color: #999; font-weight: normal; margin-top: 4px;">
-                        25.1 MB
+                        打开TurboWarp官网下载
                     </div>
                 </div>
-                <a href="伪人快跑(MacOS程序).zip" class="download-btn" download>下载</a>
+                <a href="https://desktop.turbowarp.org/" class="turbo-link" target="_blank" rel="noopener noreferrer">访问官网</a>
             </div>
 
-            <!-- sb3文件 -->
             <div class="resource-item">
                 <div class="resource-img">
-                    <img src="伪人快跑.png" alt="伪人快跑" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 fill=%27%23e67e22%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 font-size=%2750%27%3E🏃%3C/text%3E%3C/svg%3E'">
+                    <img src="伪人快跑.png" alt="服务器文件" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 fill=%27%23e67e22%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 font-size=%2750%27%3E📁%3C/text%3E%3C/svg%3E'">
                 </div>
                 <div class="resource-name">
-                    伪人快跑.sb3 v2.1.4
+                    服务器文件(局域网) v3.2
                     <div style="font-size: 0.75rem; color: #999; font-weight: normal; margin-top: 4px;">
-                       20MB
+                        12KB
                     </div>
                 </div>
-                <a href="伪人快跑.sb3" class="download-btn" download>下载</a>
+                <a href="server.js" class="download-btn" download>下载</a>
             </div>
+        </div>
 
-            <!-- HTML文件 -->
-            <div class="resource-item">
-                <div class="resource-img">
-                    <img src="伪人快跑.png" alt="伪人快跑" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 fill=%27%23e67e22%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 font-size=%2750%27%3E🏃%3C/text%3E%3C/svg%3E'">
-                </div>
-                <div class="resource-name">
-                    伪人快跑.html v2.1.4
-                    <div style="font-size: 0.75rem; color: #999; font-weight: normal; margin-top: 4px;">
-                        28.4 MB
-                    </div>
-                </div>
-                <a href="伪人快跑.html" class="download-btn" download>下载</a>
-                <a href="https://ikun9452025.github.io/weirkp/" class="turbo-link" target="_blank" rel="noopener noreferrer">▶ 直接游玩 网页版v2.1.4</a>
-                <div style="font-size: 0.65rem; color: #e67e22; margin-top: 4px;">手机端建议使用"X浏览器"或者"沙发瑞浏览器"</div>
-            </div>
-
-            <!-- ====== TurboWarp + server.js 并排 说实话，之前那个(分成2行，还是大小不一的)难看死了====== -->
-            <div class="double-row">
-                <!-- TurboWarp -->
-                <div class="resource-item">
-                    <div class="resource-img">
-                        <img src="伪人快跑.png" alt="TurboWarp" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 fill=%27%23e67e22%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 font-size=%2750%27%3E🚀%3C/text%3E%3C/svg%3E'">
-                    </div>
-                    <div class="resource-name">
-                        TurboWarp
-                        <div style="font-size: 0.75rem; color: #999; font-weight: normal; margin-top: 4px;">
-                            打开TurboWarp官网下载
-                        </div>
-                    </div><!--赶快出现404-->
-                    <a href="https://desktop.turbowarp.org/" class="turbo-link" target="_blank" rel="noopener noreferrer">访问官网</a>
-                </div>
-
-                <!-- server.js -->
-                <div class="resource-item">
-                    <div class="resource-img">
-                        <img src="伪人快跑.png" alt="服务器文件" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 fill=%27%23e67e22%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 text-anchor=%27middle%27 dy=%27.3em%27 fill=%27white%27 font-size=%2750%27%3E📁%3C/text%3E%3C/svg%3E'">
-                    </div>
-                    <div class="resource-name">
-                        服务器文件(局域网)
-                        <div style="font-size: 0.75rem; color: #999; font-weight: normal; margin-top: 4px;">
-                            12KB
-                        </div>
-                    </div>
-                    <a href="server.js" class="download-btn" download>下载</a>
-                </div>
-            </div>
-
+        <div class="text-jie-shao">  
+            新版本(2.2.6):
+                添加了指令:
+                    vbl-我是变量名-数值这里填
+                    kill-@BOSS,kill-@ALL,kill-@LB1,kill-@LB2,kill
+                    要开启作弊(玩家:我不开作弊，你白做了。)
+                    
+                添加了高难度BOSS战:
+                    (玩家:我都玩中难度，你又白做了。)
+                    建议开启作弊来通关
+                    BOSS攻击分为:
+                        火球*10 间隔1.4~2.3秒
+                        火球*2(0.2~0.6秒)*5(2~4秒)
+                        扫射2次(20个)
+                        危险警告
+                        大招(180个)
+                        
+                        激光*5(5s/个)
+                        激光三条道(2s)
+                        危险警告
+                        激光(每FPS)*148
+                        
+                        (
+                        BOSS循环
+                        火球*10 间隔1.4~2.3秒
+                        火球*2(0.2~0.6秒)*5(2~4秒)
+                        )
+                        
+                        危险警告
+                        出现2小弟
+                        每4~6秒发射激光
+                        
+                        
+                    
+            游戏介绍:
+                伪人和静香两人发生了亿点小小的矛盾
+                伪人拿了静香的手表，静香去追，而你要帮助伪人“百万撤离”
+                无限模式伪人遇到了鬼打墙，无法逃脱。(我去，居然还反复鞭尸。)
+                
+                伪人开了一家公共厕所，里面有道具卖给你。
+                
+                皮肤可以增强伪人。
+                但道具和皮肤要金币，道路上会随机刷新野生的金币。
+                
+                伪人学了一个存档模式可以在菜单的保存下载存档，快捷键"s"。可以在开始时导入。
+                
+                “百万撤离”时道路会出现障碍物，伪人一碰就磕到甲沟炎了被静香抓住。
+                箱子可以压扁障碍，并且伪人可以踩在上面。
+                但是有一个叫官涛涛的币，简称涛币，会扣除你5金币。
+                试试用道具，朱雨洁皮肤解决。
+                
+                
+            游戏难度:                   （低 中 高）
+                终点距离(有限模式)  400 500 600
+                涛币数            1~3 4~7 7~16
+                刷怪速度          7~10 2~6 1~2
+                刷道具速度        7~14 18~36 无
             
-            <div class="text-display">
-            游玩方法
             
+            快捷键:
+                esc:退出全屏
+                q:使用道具
+                a:打开无敌控制
+                s:保存
                 ←:向左移动
                 →:向右移动
-                q:使用道具
-                . . . . . .
-                具体在游戏主界面快捷键按钮查看
+                t:观看彩蛋
+                大写锁定:验证开发者模式
+                z:打开开发者面板
                 
+        </div>          
+        
+        <div class="text-display">
+            游玩方法                
                 点击"伪人"切换不同皮肤"
                 点击模式切换不同模式
                 
                 导入的存档格式是.cundang
-                老版本的存档与新版本互不可使用
+                老版本(1.5.7以下)的存档与新版本互不可使用
                 
                 触碰端有独立的按钮点击，电脑端则直接飞升。
                 触碰端无法打开开发者模式,彩蛋等。
-            </div>
-            
-            <!-- ====== 服务器配置教程 ====== -->
-            
-            
-            <div class="tutorial-text">
+        </div>
+        
+        <div class="tutorial-text">
 服务器配置:
 1. 访问 nodejs.org -->点击获取Node.js®
 2. 下载:
@@ -423,26 +494,16 @@
     下载 "服务器文件(局域网)"
     cd 拖入文件删除后方server.js 按回车键(一个像箭头尾巴弯曲的↩︎或者Enter 认不到的可以把电脑炸了)运行
     node server.js 运行文件
-            
         </div>
-
+<!--最后更新：114514年 13月 32日 25:60:60秒 星期八-->
+        <div class="footer-meta">最后更新：2026年 08月 02日 12:44:41秒 星期日
         
-        
-        <div style="text-align: center; margin-top: 40px; color: #888; font-size: 1rem;">
-            最后更新：2026年7月9 21:10 星期四
         </div>
-        
-        <div style="text-align: center; margin-top: 40px; color: #888; font-size: 1rem;">
-                    
-        </div><!--这部分是用来加一部分空白区域不然的话太难看了-->
-        
-        
-
+        <div class="footer-meta"></div>
     </div>
 </div>
-
+<!--检测多动症潜在患者，为医院筛选。-->
 <script>
-    // 移动鼠标1.145e3下触发弹窗功能
     (function() {
         let mouseMoveCount = 0;
         let hasTriggered = false;
@@ -452,7 +513,7 @@
             mouseMoveCount++;
             if (mouseMoveCount >= 1.145e3) {
                 hasTriggered = true;
-                alert('你已经移动鼠标1.145e3(1145)次啦!已经为你报好了附近治疗多动症的医院');
+                alert('你已经移动鼠标1.145e3(1145)次了!已经为你报好了附近治疗多动症的精神病医院');
                 document.removeEventListener('mousemove', handleMouseMove);
             }
         }
@@ -466,5 +527,6 @@
 <!--
 雷霆动物集体蹦迪,神人老头公路平移。
 这里没有正常人，有或者说正常的都不是人。
+(我发疯了)
 -->
 <!--访问http://www.114514250ikun9452025f**kyou.comeWCrestaurant/有惊喜-->
